@@ -6,7 +6,7 @@ export default function Cartas() {
   const [pombos, setPombos] = useState([]);
   const [clientes, setClientes] = useState([]);
   const [form, setForm] = useState({ conteudo: "", endereco: "", destinatario: "", remetente_id: "", pombo_id: "" });
-  const [abertas, setAbertas] = useState({}); // controla quais cartas estão abertas
+  const [abertas, setAbertas] = useState({});
 
   useEffect(() => {
     carregarCartas();
@@ -54,7 +54,7 @@ export default function Cartas() {
             onChange={e => setForm({ ...form, conteudo: e.target.value })}
             required
             rows={4}
-            style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #ccc" }}
+            style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #ccc", resize: "none" }}
           />
         </div>
 

@@ -7,18 +7,18 @@ import Cartas from "./Cartas";
 export default function App() {
   return (
     <Router>
-      <nav style={{ padding: "10px", background: "#eee" }}>
-        <Link to="/clientes" style={{ marginRight: 10 }}>Clientes</Link>
-        <Link to="/pombos" style={{ marginRight: 10 }}>Pombos</Link>
-        <Link to="/cartas">Cartas</Link>
-      </nav>
+  <nav className="navbar">
+    <Link to="/clientes">Clientes</Link>
+    <Link to="/pombos">Pombos</Link>
+    <Link to="/cartas">Cartas</Link>
+  </nav>
 
-      <Routes>
-        <Route path="/" element={<Navigate to="/clientes" />} />
-        <Route path="/clientes" element={<Clientes />} />
-        <Route path="/pombos" element={<Pombos />} />
-        <Route path="/cartas" element={<Cartas />} />
-      </Routes>
-    </Router>
+  <Routes>
+    <Route path="/" element={<Navigate to="/clientes" />} />
+    <Route path="/clientes" element={<Clientes />} />
+    <Route path="/pombos" element={<Pombos />} />
+    <Route path="/cartas" element={<Cartas />} />
+  </Routes>
+</Router>
   );
 }

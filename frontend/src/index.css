@@ -86,3 +86,23 @@ form button:hover {
 .status.entregue { color: green; }
 .status.ativo { color: green; }
 .status.aposentado { color: orange; }
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-bottom: 3px solid transparent;
+  color: #333;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  border-bottom: 3px solid #4CAF50;
+  color: #4CAF50;
+}
+

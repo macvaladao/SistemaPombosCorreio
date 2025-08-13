@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  padding: 10px;
+  background: #eee;
+  display: flex;
+  gap: 12px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #45a049;
+}
