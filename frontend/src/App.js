@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
 import Clientes from "./Clientes";
 import Pombos from "./Pombos";
 import Cartas from "./Cartas";
@@ -14,6 +14,7 @@ export default function App() {
       </nav>
 
       <Routes>
+        <Route path="/" element={<Navigate to="/clientes" />} />
         <Route path="/clientes" element={<Clientes />} />
         <Route path="/pombos" element={<Pombos />} />
         <Route path="/cartas" element={<Cartas />} />

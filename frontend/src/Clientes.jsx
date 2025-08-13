@@ -41,14 +41,65 @@ export default function Clientes() {
   return (
     <div className="container">
       <h2>Clientes</h2>
-      <form onSubmit={salvarCliente}>
-        <input placeholder="Nome" value={form.nome} onChange={e => setForm({ ...form, nome: e.target.value })} required />
-        <input placeholder="Email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} type="email" required />
-        <input placeholder="Nascimento" value={form.nascimento} onChange={e => setForm({ ...form, nascimento: e.target.value })} type="date" required />
-        <input placeholder="Endereço" value={form.endereco} onChange={e => setForm({ ...form, endereco: e.target.value })} required />
-        <button type="submit">{editandoId ? "Atualizar" : "Cadastrar"}</button>
-        {editandoId && <button type="button" onClick={cancelarEdicao} style={{ marginLeft: 10 }}>Cancelar</button>}
-      </form>
+      <form onSubmit={salvarCliente} style={{ display: "flex", flexDirection: "column", gap: "12px", padding:"12px"}}>
+  <div>
+    <label style={{ display: "block", marginBottom: "4px" }}>Nome:</label>
+    <input 
+      placeholder="Nome" 
+      value={form.nome} 
+      onChange={e => setForm({ ...form, nome: e.target.value })} 
+      required 
+      style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #ccc" }}
+    />
+  </div>
+
+  <div>
+    <label style={{ display: "block", marginBottom: "4px" }}>Email:</label>
+    <input 
+      placeholder="Email" 
+      value={form.email} 
+      onChange={e => setForm({ ...form, email: e.target.value })} 
+      type="email" 
+      required
+      style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #ccc" }}
+    />
+  </div>
+
+  <div>
+    <label style={{ display: "block", marginBottom: "4px" }}>Data de Nascimento:</label>
+    <input 
+      placeholder="Data de Nascimento" 
+      value={form.nascimento} 
+      onChange={e => setForm({ ...form, nascimento: e.target.value })} 
+      type="date" 
+      required
+      style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #ccc" }}
+    />
+  </div>
+
+  <div>
+    <label style={{ display: "block", marginBottom: "4px" }}>Endereço:</label>
+    <input 
+      placeholder="Endereço" 
+      value={form.endereco} 
+      onChange={e => setForm({ ...form, endereco: e.target.value })} 
+      required
+      style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #ccc" }}
+    />
+  </div>
+
+  <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+    <button type="submit" style={{ padding: "8px 16px", borderRadius: "4px", backgroundColor: "#4CAF50", color: "white", border: "none" }}>
+      {editandoId ? "Atualizar" : "Cadastrar"}
+    </button>
+    {editandoId && (
+      <button type="button" onClick={cancelarEdicao} style={{ padding: "8px 16px", borderRadius: "4px", backgroundColor: "#f44336", color: "white", border: "none" }}>
+        Cancelar
+      </button>
+    )}
+  </div>
+</form>
+
 
       {clientes.map(c => (
         <div key={c.id} className="card">

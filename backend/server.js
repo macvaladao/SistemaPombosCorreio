@@ -23,7 +23,7 @@ db.prepare(`CREATE TABLE IF NOT EXISTS clientes (
 
 db.prepare(`CREATE TABLE IF NOT EXISTS pombos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    apelido TEXT,
+    nome TEXT,
     velocidade_media REAL,
     foto TEXT,
     aposentado BOOLEAN DEFAULT 0
@@ -100,16 +100,16 @@ app.get("/pombos", (req, res) => {
 });
 
 app.post("/pombos", (req, res) => {
-  const { apelido, velocidade_media, foto } = req.body;
-  db.prepare("INSERT INTO pombos (apelido, velocidade_media, foto, aposentado) VALUES (?, ?, ?, 0)")
-    .run(apelido, velocidade_media, foto);
+  const { nome, velocidade_media, foto } = req.body;
+  db.prepare("INSERT INTO pombos (nome, velocidade_media, foto, aposentado) VALUES (?, ?, ?, 0)")
+    .run(nome, velocidade_media, foto);
   res.sendStatus(201);
 });
 
 app.put("/pombos/:id", (req, res) => {
-  const { apelido, velocidade_media, foto, aposentado } = req.body;
-  db.prepare("UPDATE pombos SET apelido=?, velocidade_media=?, foto=?, aposentado=? WHERE id=?")
-    .run(apelido, velocidade_media, foto, aposentado, req.params.id);
+  const { nome, velocidade_media, foto, aposentado } = req.body;
+  db.prepare("UPDATE pombos SET nome=?, velocidade_media=?, foto=?, aposentado=? WHERE id=?")
+    .run(nome, velocidade_media, foto, aposentado, req.params.id);
   res.json({ message: "Pombo atualizado com sucesso" });
 });
 
@@ -130,7 +130,7 @@ app.patch("/pombos/:id/aposentar", (req, res) => {
 app.get("/cartas", (req, res) => {
   const cartas = db.prepare(`
     SELECT cartas.*, 
-           pombos.apelido AS pombo_nome, 
+           pombos.nome AS pombo_nome, 
            clientes.nome AS remetente_nome
     FROM cartas
     LEFT JOIN pombos ON cartas.pombo_id = pombos.id
