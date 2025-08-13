@@ -16,7 +16,7 @@ Frontend em **React.js** e backend em **Node.js** com **Express** e **SQLite**.
 ## 🚀 Como rodar o projeto
 
 ### 1. Rodar o backend
-No terminal
+No terminal:
 
 cd backend
 
