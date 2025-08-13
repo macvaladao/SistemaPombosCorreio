@@ -16,7 +16,7 @@ Frontend em **React.js** e backend em **Node.js** com **Express** e **SQLite**.
 ## 🚀 Como rodar o projeto
 
 ### 1. Rodar o backend
-No terminal:
+No terminal cmd:
 
 cd backend
 
@@ -27,7 +27,7 @@ node server.js
 O servidor vai rodar em http://localhost:3001.
 
 ### 2. Rodar o frontend
-Em outro terminal:
+Em outro terminal cmd:
 
 cd frontend
 
