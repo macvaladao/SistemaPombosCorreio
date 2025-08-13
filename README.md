@@ -1,4 +1,4 @@
-# Sistema de Pombos-Correio 🕊️
+# Sistema de Pombos Correio 🕊️
 
 Aplicação web para gerenciar **clientes**, **pombos** e **cartas** em um sistema de entrega fictício.  
 Frontend em **React.js** e backend em **Node.js** com **Express** e **SQLite**.
