@@ -19,7 +19,9 @@ Frontend em **React.js** e backend em **Node.js** com **Express** e **SQLite**.
 No terminal
 
 cd backend
+
 npm install
+
 node server.js
 
 O servidor vai rodar em http://localhost:3001.
@@ -28,7 +30,9 @@ O servidor vai rodar em http://localhost:3001.
 Em outro terminal:
 
 cd frontend
+
 npm install
+
 npm start
 
 O frontend vai abrir em http://localhost:3000.
