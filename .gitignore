@@ -1,6 +1,6 @@
 # Node
 node_modules/
-uploads/
+
 dist/
 build/
 .env
